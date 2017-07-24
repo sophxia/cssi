@@ -1,0 +1,12 @@
+
+#first {
+  background-color: #4B4D65;
+  color: red;
+}
+#second {
+  background-color: #FF8A66;
+}
+.section {
+  padding: 100px;
+  padding-left: 150px;
+}
