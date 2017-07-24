@@ -79,6 +79,10 @@ input[type="checkbox"]:checked + label span.checkbox::after {
   color: #62AFFF;
 }
 
+
+
+
+
 /*.container span.checkbox::before {
   width: 27px;
   height: 27px;
@@ -101,7 +105,9 @@ input[type="checkbox"]:checked + label span.checkbox::after {
 }
 input[type="checkbox"]:checked + label span.checkbox::after {
   color: #62AFFF;
+}*/
 =======
+
 body {
    z-index: 1;
    margin-top: 0px;
@@ -111,7 +117,7 @@ body {
 }
 
 html {
-  background: url("SliceAssets/PizzaBackDark.png") no-repeat center center fixed;
+  background: url("PizzaBackDark.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -132,8 +138,8 @@ ul.menu {
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-   box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-}
+   -box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+
 
 #logoHeader {
    position: absolute;

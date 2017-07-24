@@ -8,7 +8,7 @@ body {
 }
 
 html {
-  background: url("SliceAssets/PizzaBackDark.png") no-repeat center center fixed;
+  background: url("PizzaBackDark.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,7 +25,7 @@ ul.menu {
    padding: 0;
    overflow: hidden;
    background-color: rgba(255, 255, 255, .5);
-   
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
