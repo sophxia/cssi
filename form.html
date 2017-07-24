@@ -4,6 +4,7 @@
    <head>
      <style src = "form.css"> </style>
      <!-- this will link the css which has the buttons to this file-->
+     <link rel="stylesheet" href="form.css">
       <title>Slice</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -14,6 +15,28 @@
    </head>
 
    <body>
+      <!-- Header that contains logo at the top of the page -->
+      <div class="navBar">
+         <div id = "navCon">
+            <img src = "SliceAssets/SliceLogo.png" id = "logoHeader">
+            <ul class ="menu">
+               <li><a>
+                  How It Works
+               </a></li>
+               <li><a>
+                  About Us
+               </a></li>
+            </ul>
+         </div>
+      </div>
+
+
+
+      <div id = "takeSpace"></div>
+
+
+
+
      <section id="first" class="section">
     <div class="container">
       <input type="radio" name="group1" id="radio-1">
@@ -38,6 +61,7 @@
 
         <br><br>
         What toppings are you interested in?
+
         <br><input type = "checkbox" name = "num_people" value = "cheese"/> Cheese
         <input type = "checkbox" name = "num_people" value = "pepperoni"/> Pepperoni
 
@@ -52,6 +76,13 @@
         <br>
         <input type="submit" value="Submit">
     </form>
+
+
+
+
+
+    <img src = "SliceAssets/PoweredByYam.png" id = "yamLove">
+
 
    </body>
 </html>
