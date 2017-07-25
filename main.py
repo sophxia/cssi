@@ -26,7 +26,7 @@ class FormHandler(webapp2.RequestHandler):
             if c.email == temp.email:
                 temp.key.delete()
         for temp in Customer.query().fetch():
-            if c.toppings == temp.toppings and c.location == temp.location:
+            if (c.num_people+temp.num_people)%4==0 and c.toppings == temp.toppings and c.location == temp.location:
                 print "You found a match!"
                 print c.email
                 print temp.email
