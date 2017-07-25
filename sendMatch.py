@@ -1,21 +1,16 @@
 from google.appengine.api import mail
+import jinja2
+import os
+import webapp2
+from google.appengine.api import images
+from google.appengine.ext import ndb
 
-mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
-                   to=" {{ name }} < {{ email }}>",
-                   subject="You've been Matched! -Slice",
-                   body="""Dear {{ name }}:
+env=jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-      Congradulations! We found you someone in your area to order pizza with.
-
-      Their email is {{ email }}, and we matched you with them based off the following preferences:
-
-      - {{ num_ppl }}
-      - {{ toppings }}
-      - {{ location }}
-
-      So what are you waiting for? That pizza won't order itself!
-
-
-      Happy slicing,
-      The Slice Team
-""")
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('mailTemplate.txt')
+        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
+                           to= name + "  < " email + " >",
+                           subject="You've been Matched! -Slice",
+                           body=template.render())
