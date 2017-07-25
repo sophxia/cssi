@@ -80,6 +80,7 @@ li a:hover {
    background-color: #CF1717;
    border: none;
    color: white;
+   font-family: 'Dosis', sans-serif;
    width: 30%;
    padding: 15px 32px;
    text-align: center;
@@ -101,6 +102,12 @@ li a:hover {
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
+
+.match:hover {
+   transform: scale(1.2);
+   background-color: #b81414;
+}
+
 
 #yamLove {
    position: absolute;

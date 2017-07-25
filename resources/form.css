@@ -1,3 +1,5 @@
+
+/*sets body as first layer; makes body fill page*/
 body {
    z-index: 1;
    margin-top: 0px;
@@ -6,6 +8,7 @@ body {
    margin-left: 0px;
 }
 
+/*sets background images and automatically resizes it*/
 html {
   background: url("PizzaBackDark.png") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -14,6 +17,7 @@ html {
   background-size: cover;
 }
 
+/*created menu bar with about us and how it works sections*/
 ul.menu {
    z-index: 3;
    position: absolute;
@@ -32,6 +36,7 @@ ul.menu {
 
 }
 
+/*places logo on top of menubar in upperleft corner*/
 #logoHeader {
    position: absolute;
    top: 0px;
@@ -40,10 +45,12 @@ ul.menu {
    z-index: 4;
 }
 
+/*floats menu bar options to the right*/
 li {
     float: right;
 }
 
+/*styles menu bar*/
 li a {
    font-family: 'Open Sans', sans-serif;
    display: block;
@@ -52,25 +59,24 @@ li a {
    padding: 14px 16px;
    text-decoration: none;
 
+   /*animation for menu bar*/
    -webkit-transition: all 1s;
    -moz-transition: all 1s;
    transition: all 1s;
    cursor: pointer;
 }
 
+/*sets hover color*/
 li a:hover:not(.activeMenu) {
    background-color: white;
 }
 
+/*sets hover animation style*/
 li a:hover {
    transform: scale(1.1);
 }
 
-
-#takeSpace {
-   height: 100px;
-}
-
+/*styles container for form*/
 .formSpace {
    position: absolute;
    top: 150px;
@@ -78,26 +84,29 @@ li a:hover {
    background-color: rgba(255, 255, 255, 0.5);
    padding: 20px;
 
+   /*rounds box edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 
+/*styles form font*/
 form {
    font-family: 'Dosis', sans-serif;
    font-size: 20px;
 }
 
+/*styles input font*/
 input {
    font-family: 'Open Sans', sans-serif;
 }
 
-
-
+/*styles yam logo*/
 #yamLove {
    position: absolute;
    right: 15px;
@@ -105,9 +114,11 @@ input {
    width: 300px;
    background-color: rgba(255, 255, 255, 0.5);
 
+   /*rounds box edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
@@ -115,15 +126,19 @@ input {
 }
 
 
-
+/*F's stuff*/
 
 #first {
   background-color: #4B4D65;
   color: red;
 }
+
+
 #second {
   background-color: #FF8A66;
 }
+
+
 .section {
   padding: 100px;
   padding-left: 150px;

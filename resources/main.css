@@ -1,4 +1,5 @@
 
+/*sets body as first layer; makes body fill page*/
 body {
    z-index: 1;
    margin-top: 0px;
@@ -7,6 +8,7 @@ body {
    margin-left: 0px
 }
 
+/*sets background images and automatically resizes it*/
 html {
   background: url("PizzaBackDark.png") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -15,6 +17,7 @@ html {
   background-size: cover;
 }
 
+/*created menu bar with about us and how it works sections*/
 ul.menu {
    z-index: 3;
    position: absolute;
@@ -32,6 +35,7 @@ ul.menu {
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 
+/*places logo on top of menubar in upperleft corner*/
 #logoHeader {
    position: absolute;
    top: 0px;
@@ -40,10 +44,12 @@ ul.menu {
    z-index: 4;
 }
 
+/*floats menu bar options to the right*/
 li {
     float: right;
 }
 
+/*styles menu bar*/
 li a {
    font-family: 'Open Sans', sans-serif;
    display: block;
@@ -52,26 +58,31 @@ li a {
    padding: 14px 16px;
    text-decoration: none;
 
+   /*animation for menu bar*/
    -webkit-transition: all 1s;
    -moz-transition: all 1s;
    transition: all 1s;
    cursor: pointer;
 }
 
+/*sets hover color*/
 li a:hover:not(.activeMenu) {
    background-color: white;
 }
 
+/*sets hover animation style*/
 li a:hover {
    transform: scale(1.1);
 }
 
+/*postions start button*/
 #grabSlice {
    position: absolute;
    top: 50%;
    left: 35%;
 }
 
+/*styles start button*/
 .button {
    background-color: #CF1717;
    border: none;
@@ -89,20 +100,24 @@ li a:hover {
    cursor: pointer;
    z-index: 3;
 
+   /*rounds box edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 
+/*animated button*/
 .button:hover {
    transform: scale(1.2);
    background-color: #b81414;
 }
 
+/*styles yam logo*/
 #yamLove {
    position: absolute;
    right: 15px;
@@ -110,9 +125,11 @@ li a:hover {
    width: 300px;
    background-color: rgba(255, 255, 255, 0.5);
 
+   /*rounds box edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
