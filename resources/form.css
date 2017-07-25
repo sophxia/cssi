@@ -215,6 +215,7 @@ input[type="radio"]:checked + label span.radio::after {
 input[type="checkbox"]:checked + label span.checkbox::after {
   color: #62AFFF;
 }
+<<<<<<< HEAD
 
 body {
    z-index: 1;
@@ -284,3 +285,5 @@ li a:hover {
    transform: scale(1.1);
 >>>>>>> 9e4552653993bd2f9923819cb37c4e72f6b0345a
 }
+=======
+>>>>>>> 33e587688b68a20df6d764475abea31e77b1a54c
