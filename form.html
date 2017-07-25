@@ -37,11 +37,14 @@
       <div class = "formSpace">
          <form method="post" action ="">
             How many people are you ordering with?
-            <br><input type = "radio" name = "num_people" value = "1"/> 1
-            <input type = "radio" name = "num_people" value = "2"/> 2
-            <input type = "radio" name = "num_people" value = "3"/> 3
-            <input type = "radio" name = "num_people" value = "4"/> 4 or more
-
+            <br>
+            <select>
+              <option value = "1" name = "num_people">1</option>
+              <option value="2" name = "num_people">2</option>
+              <option value="3" name = "num_people">3</option>
+              <option value="4" name = "num_people">4</option>
+            </select>
+            
             <br><br>
             What toppings are you interested in?
             <br><input type = "checkbox" name = "toppings" value = "cheese"/> Cheese
