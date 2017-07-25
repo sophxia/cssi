@@ -37,20 +37,7 @@
 
 
 
-     <section id="first" class="section">
-    <div class="container">
-      <input type="radio" name="group1" id="radio-1">
-      <label for="radio-1"><span class="radio">Coffee</span></label>
-    </div>
-    <div class="container">
-      <input type="radio" name="group1" id="radio-2">
-      <label for="radio-2"><span class="radio">Tea</span></label>
-    </div>
-    <div class="container">
-      <input type="radio" name="group1" id="radio-3">
-      <label for="radio-3"><span class="radio">Cappuccino</span></label>
-    </div>
-   </section>
+
 
      <form method="post" action ="">
         How many people are you willing to order with?
@@ -60,11 +47,17 @@
         <input type = "radio" name = "num_people" value = "4"/> 4 or more
 
         <br><br>
-        What toppings are you interested in?
-
-        <br><input type = "checkbox" name = "num_people" value = "cheese"/> Cheese
+        <p>What toppings are you interested in?</p>
+        <section id="first" class="section">
+        <div class="container"><input type = "radio" name = "num_people" value = "cheese" id = "radio-1"/>
+          <label for = "radio-1"><span class = "radio">Cheese</span></label></div>
         <input type = "checkbox" name = "num_people" value = "pepperoni"/> Pepperoni
 
+       <div class="container">
+         <input type="radio" name="group1" id="radio-2">
+         <label for="radio-2"><span class="radio"></span></label>
+       </div>
+      </section>
         <br><br>
         What is your location?
         <br><input type = "text" name = "location"/>
