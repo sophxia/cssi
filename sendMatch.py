@@ -7,9 +7,9 @@ from google.appengine.ext import ndb
 
 env=jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class MainHandler(webapp2.RequestHandler):
+class emailHandler(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('mailTemplate.txt')
+        template = env.get_template('resources/mailTemplate.txt')
         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
                            to= name + "  < " email + " >",
                            subject="You've been Matched! -Slice",

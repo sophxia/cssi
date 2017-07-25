@@ -3,6 +3,8 @@ import os
 import webapp2
 from google.appengine.api import images
 from google.appengine.ext import ndb
+from google.appengine.api import mail
+
 
 env=jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -47,9 +49,17 @@ class Customer(ndb.Model):
     location = ndb.StringProperty()
     email = ndb.StringProperty()
 
+class EmailHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('resources/mailTemplate.txt')
+        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
+                           to= name + "  < " email + " >",
+                           subject="You've been Matched! -Slice",
+                           body=template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/getstarted', FormHandler),
     ('/results', ResultsHandler),
+    ('/email', EmailHandler),
 ], debug=True)
