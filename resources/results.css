@@ -1,5 +1,5 @@
 
-
+/*sets body to fill page, sets body to bottom layer*/
 body {
    z-index: 1;
    margin-top: 0px;
@@ -8,6 +8,7 @@ body {
    margin-left: 0px;
 }
 
+/*sets dynamic background*/
 html {
   background: url("PizzaBackDark.png") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -16,6 +17,7 @@ html {
   background-size: cover;
 }
 
+/*styles menu bar*/
 ul.menu {
    z-index: 3;
    position: absolute;
@@ -34,6 +36,7 @@ ul.menu {
 
 }
 
+/*positions logo*/
 #logoHeader {
    position: absolute;
    top: 0px;
@@ -42,10 +45,12 @@ ul.menu {
    z-index: 4;
 }
 
+/*sets menu bar links*/
 li {
     float: right;
 }
 
+/*styles menu bar*/
 li a {
    font-family: 'Open Sans', sans-serif;
    display: block;
@@ -54,25 +59,24 @@ li a {
    padding: 14px 16px;
    text-decoration: none;
 
+   /*sets animations*/
    -webkit-transition: all 1s;
    -moz-transition: all 1s;
    transition: all 1s;
    cursor: pointer;
 }
 
+/*sets background color on hover*/
 li a:hover:not(.activeMenu) {
    background-color: white;
 }
 
+/*background animation*/
 li a:hover {
    transform: scale(1.1);
 }
 
-
-#takeSpace {
-   height: 100px;
-}
-
+/*styles matching box*/
 #matching {
    position: absolute;
    left: 35%;
@@ -94,21 +98,24 @@ li a:hover {
    cursor: pointer;
    z-index: 3;
 
+   /*rounds box edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 
+/*animates match box*/
 .match:hover {
    transform: scale(1.2);
    background-color: #b81414;
 }
 
-
+/*styles logo*/
 #yamLove {
    position: absolute;
    right: 15px;
@@ -116,9 +123,11 @@ li a:hover {
    width: 300px;
    background-color: rgba(255, 255, 255, 0.5);
 
+   /*rounds edges*/
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+   
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
