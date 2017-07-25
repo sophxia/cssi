@@ -95,7 +95,6 @@ li a:hover {
    -webkit-transition: all 1s;
    -moz-transition: all 1s;
    transition: all 1s;
-   cursor: pointer;
    z-index: 3;
 
    /*rounds box edges*/
@@ -111,7 +110,7 @@ li a:hover {
 
 /*animates match box*/
 .match:hover {
-   transform: scale(1.2);
+   transform: scale(1.025);
    background-color: #b81414;
 }
 
@@ -127,7 +126,7 @@ li a:hover {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
-   
+
    /* box-shadow */
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
