@@ -4,7 +4,7 @@ Congratulations! We found you someone in your area to order pizza with.
 
 Their email is {{ email }}, and we matched you with them based off the following preferences:
 
-- {{ num_ppl }}
+- {{ num_people }}
 - {{ toppings }}
 - {{ location }}
 

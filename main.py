@@ -32,6 +32,7 @@ class FormHandler(webapp2.RequestHandler):
                 print "You found a match!"
                 print c.email
                 print temp.email
+                
                 temp.key.delete()
                 self.response.write(env.get_template('results.html').render())
                 return
@@ -49,17 +50,17 @@ class Customer(ndb.Model):
     location = ndb.StringProperty()
     email = ndb.StringProperty()
 
-class EmailHandler(webapp2.RequestHandler):
-    def get(self):
-        template = env.get_template('resources/mailTemplate.txt')
-        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
-                           to= name + "  < " email + " >",
-                           subject="You've been Matched! -Slice",
-                           body=template.render())
+# class EmailHandler(webapp2.RequestHandler):
+#     def get(self):
+#         template = env.get_template('resources/mailTemplate.txt')
+#         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
+#                            to= name + "  < " email + " >",
+#                            subject="You've been Matched! -Slice",
+#                            body=template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/getstarted', FormHandler),
     ('/results', ResultsHandler),
-    ('/email', EmailHandler),
+    #('/email', EmailHandler),
 ], debug=True)
