@@ -18,6 +18,7 @@ class FormHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('form.html')
         self.response.write(template.render())
+
     def post(self):
         print "Yay"
         num_people = int(self.request.get("num_people"))
@@ -33,12 +34,27 @@ class FormHandler(webapp2.RequestHandler):
                 print "You found a match!"
                 print c.email
                 print temp.email
+
+                dic1 = c.get_mail_info(temp)
+                dic2 = temp.get_mail_info(c)
+
+                self.send_mail(dic1)
+                self.send_mail(dic2)
+
                 # EmailHandler(c, temp);
                 temp.key.delete()
                 self.response.write(env.get_template('results.html').render())
                 return
         c.put()
         self.response.write(env.get_template('results.html').render())
+
+    def send_mail (self, dic):
+        template = env.get_template('resources/mailTemplate.txt')
+        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
+                           to= dic['email'],
+                           subject="You've been Matched!",
+                           body= template.render(dic))
+
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
@@ -51,14 +67,18 @@ class Customer(ndb.Model):
     location = ndb.StringProperty()
     email = ndb.StringProperty()
 
+    def get_mail_info (self, temp):
+        dic = {'email' : self.email, 'match_email' : temp.email, 'toppings' : self.toppings, 'location' : self.location, 'num_people' : self.num_people}
+        return dic
+
 class EmailHandler(webapp2.RequestHandler):
-    def get(self):
+    def get(self, c2):
 
 
-        test_dic = {'email' : 'testymail@gmail.com', 'toppings' : 'cheese', 'location' : 'MIT'}
 
-        # c_dic1 = {'email' : c2.email, 'toppings' : c1.toppings, 'location' : c1.location}
-        # c_dic2 = {'email' : c1.email, 'toppings' : c1.toppings, 'location' : c1.location}
+        # test_dic = {'email' : 'testymail@gmail.com', 'toppings' : 'cheese', 'location' : 'MIT'}
+
+
 
 
         template = env.get_template('resources/mailTemplate.txt')
