@@ -32,7 +32,11 @@ class FormHandler(webapp2.RequestHandler):
                 print "You found a match!"
                 print c.email
                 print temp.email
+<<<<<<< HEAD
                 EmailHandler(c, temp);
+=======
+
+>>>>>>> 49424eac638e3a2f3b94803ea60e34294d6f9dbf
                 temp.key.delete()
                 self.response.write(env.get_template('results.html').render())
                 return
