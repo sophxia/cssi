@@ -20,7 +20,6 @@ class FormHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        print "Yay"
         num_people = int(self.request.get("num_people"))
         toppings = self.request.get("toppings")
         location = self.request.get("location")
@@ -31,15 +30,11 @@ class FormHandler(webapp2.RequestHandler):
                 temp.key.delete()
         for temp in Customer.query().fetch():
             if (c.num_people+temp.num_people)%4==0 and c.toppings == temp.toppings and c.location == temp.location:
-                print "You found a match!"
                 print c.email
                 print temp.email
 
-                dic1 = c.get_mail_info(temp)
-                dic2 = temp.get_mail_info(c)
-
-                self.send_mail(dic1)
-                self.send_mail(dic2)
+                self.send_mail(c.get_mail_info(temp))
+                self.send_mail(temp.get_mail_info(c))
 
                 # EmailHandler(c, temp);
                 temp.key.delete()
@@ -52,7 +47,7 @@ class FormHandler(webapp2.RequestHandler):
         template = env.get_template('resources/mailTemplate.txt')
         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
                            to= dic['email'],
-                           subject="You've been Matched!",
+                           subject="You've Been Matched!",
                            body= template.render(dic))
 
 
@@ -74,12 +69,7 @@ class Customer(ndb.Model):
 class EmailHandler(webapp2.RequestHandler):
     def get(self, c2):
 
-
-
         # test_dic = {'email' : 'testymail@gmail.com', 'toppings' : 'cheese', 'location' : 'MIT'}
-
-
-
 
         template = env.get_template('resources/mailTemplate.txt')
         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
@@ -91,7 +81,6 @@ class EmailHandler(webapp2.RequestHandler):
         #                    to= "  < " + c2.email + " >",
         #                    subject="You've been Matched! -Slice",
         #                    body=template.render(c2))
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

@@ -1,12 +1,11 @@
 Congratulations! We found you someone in your area to order pizza with.
 
-Their email is {{ match_email }}, and we matched you with them based off the following preferences:
+Their email is {{ match_email }}, and we matched you with them based on the following preferences:
 
-- {{ toppings }}
-- {{ location }}
+Toppings: {{ toppings }}
+Location: {{ location }}
 
-So what are you waiting for? That pizza won't order itself!
-
+So, what are you waiting for? That pizza won't order itself!
 
 Happy slicing,
-The Slice Team
+The SLICE Team
