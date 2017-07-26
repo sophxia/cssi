@@ -11,4 +11,4 @@ Their email is {{ match_email }}, and we matched you with them based off the fol
 So what are you waiting for? That pizza won't order itself!
 
 Happy slicing,
-The Slice Team
+The SLICE Team
