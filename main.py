@@ -62,9 +62,9 @@ class EmailHandler(webapp2.RequestHandler):
 
         # template = env.get_template('resources/mailTemplate.txt')
         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
-                           to= "  < austinmejia12@gmail.com >",
+                           to= "austinmejia12@gmail.com",
                            subject="You've been Matched! -Slice",
-                           body= "We did it!")
+                           body= """We did it!""")
 
 
                         #    template.render(test_dic))
