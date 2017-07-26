@@ -1,12 +1,14 @@
 Congratulations! We found you someone in your area to order pizza with.
 
+
 Their email is {{ match_email }}, and we matched you with them based off the following preferences:
 
-- {{ toppings }}
-- {{ location }}
+-- You had {{ num_people }} in your party, so we matched you with a group that would reduce food waste
+-- You both wanted {{ toppings }} on your pizza, so no one gets stuck with a gross topping (looking at you anchovies)
+-- You both live by {{ location }}, so it's a short distance to travel to meet up!
+
 
 So what are you waiting for? That pizza won't order itself!
-
 
 Happy slicing,
 The Slice Team
