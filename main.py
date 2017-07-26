@@ -32,6 +32,7 @@ class FormHandler(webapp2.RequestHandler):
                 print "You found a match!"
                 print c.email
                 print temp.email
+                EmailHandler(c, temp);
                 temp.key.delete()
                 self.response.write(env.get_template('results.html').render())
                 return
@@ -51,15 +52,32 @@ class Customer(ndb.Model):
 
 class EmailHandler(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('resources/mailTemplate.txt')
-        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com"
-                           to= name + "  < " email + " >",
+
+
+        test_dic = {'email' : 'testymail@gmail.com', 'toppings' : 'cheese', 'location' : 'MIT'}
+
+        # c_dic1 = {'email' : c2.email, 'toppings' : c1.toppings, 'location' : c1.location}
+        # c_dic2 = {'email' : c1.email, 'toppings' : c1.toppings, 'location' : c1.location}
+
+
+        # template = env.get_template('resources/mailTemplate.txt')
+        mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
+                           to= "  < austinmejia12@gmail.com >",
                            subject="You've been Matched! -Slice",
-                           body=template.render())
+                           body= "We did it!")
+
+
+                        #    template.render(test_dic))
+
+        # mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
+        #                    to= "  < " + c2.email + " >",
+        #                    subject="You've been Matched! -Slice",
+        #                    body=template.render(c2))
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/getstarted', FormHandler),
     ('/results', ResultsHandler),
-    ('/email', EmailHandler),
+    ('/email', EmailHandler)
 ], debug=True)
