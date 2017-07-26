@@ -11,6 +11,7 @@ handlers:
 
 - url: /resources
   static_dir: resources
+  application_readable: True
 
 - url: .*
   script: main.app

@@ -7,6 +7,7 @@ from google.appengine.api import mail
 
 
 env=jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+env1=jinja2.Environment(loader=jinja2.FileSystemLoader(''))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -60,14 +61,11 @@ class EmailHandler(webapp2.RequestHandler):
         # c_dic2 = {'email' : c1.email, 'toppings' : c1.toppings, 'location' : c1.location}
 
 
-        # template = env.get_template('resources/mailTemplate.txt')
+        template = env.get_template('resources/mailTemplate.txt')
         mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
                            to= "austinmejia12@gmail.com",
-                           subject="You've been Matched! -Slice",
-                           body= """We did it!""")
-
-
-                        #    template.render(test_dic))
+                           subject="You've been Matched!",
+                           body= template.render(test_dic))
 
         # mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
         #                    to= "  < " + c2.email + " >",
