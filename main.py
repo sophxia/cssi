@@ -17,6 +17,8 @@ class MainHandler(webapp2.RequestHandler):
 class FormHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('form.html')
+        template2 = env.get_template('resources/noMatchTemp.txt')
+
         self.response.write(template.render())
 
     def post(self):
@@ -29,7 +31,12 @@ class FormHandler(webapp2.RequestHandler):
         for temp in Customer.query().fetch():
             print c.time-temp.time
             if c.time-temp.time>3600:
-                #SEND DID NOT MATCH MAIL TO TEMP
+
+                mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
+                                   to= c.email,
+                                   subject="No Matches Found...",
+                                   body= template2.render())
+
                 temp.key.delete()
             elif c.email == temp.email:
                 temp.key.delete()

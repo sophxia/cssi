@@ -40,8 +40,22 @@ ul.menu {
    position: absolute;
    top: 0px;
    float: left;
-   height: 45px;
+   height: 48px;
    z-index: 4;
+
+   /*animation for menu bar*/
+   -webkit-transition: all 1s;
+   -moz-transition: all 1s;
+   transition: all 1s;
+   cursor: pointer;
+}
+
+#logoHeader:hover:not(.activeMenu) {
+   background-color: white;
+}
+
+#logoHeader:hover {
+   transform: scale(1.075);
 }
 
 /*floats menu bar options to the right*/
