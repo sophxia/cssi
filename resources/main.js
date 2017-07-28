@@ -1,8 +1,8 @@
 function setup() {
 
    $(".button").css('opacity', '1');
-      setTimeout(bringInMenu, 900);
-      setTimeout(bringInYam, 1500);
+      setTimeout(bringInMenu, 0);
+      setTimeout(bringInYam, 0);
 }
 
 
