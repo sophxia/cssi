@@ -7,7 +7,6 @@ Their email is {{ match_email }}, and we matched you with them based off the fol
 -- You both wanted {{ toppings }} on your pizza, so no one gets stuck with a gross topping (looking at you anchovies)
 -- You both live by {{ location }}, so it's a short distance to travel to meet up!
 
-
 So what are you waiting for? That pizza won't order itself!
 
 Happy slicing,
