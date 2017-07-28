@@ -17,8 +17,6 @@ class MainHandler(webapp2.RequestHandler):
 class FormHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('form.html')
-        template2 = env.get_template('resources/noMatchTemp.txt')
-
         self.response.write(template.render())
 
     def post(self):
@@ -35,7 +33,7 @@ class FormHandler(webapp2.RequestHandler):
                 mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
                                    to= temp.email,
                                    subject="No Matches Found...",
-                                   body= template2.render())
+                                   body= env.get_template('resources/noMatchTemp.txt').render())
 
                 temp.key.delete()
             elif c.email == temp.email:
