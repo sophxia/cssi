@@ -33,7 +33,7 @@ class FormHandler(webapp2.RequestHandler):
             if c.time-temp.time>3600:
 
                 mail.send_mail(sender= "Slice@slice-cssi.appspotmail.com",
-                                   to= c.email,
+                                   to= temp.email,
                                    subject="No Matches Found...",
                                    body= template2.render())
 
