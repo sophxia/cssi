@@ -18,6 +18,7 @@ class FormHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('form.html')
         template2 = env.get_template('resources/noMatchTemp.txt')
+        templateFancy = env.get_template('resources/Slice.html')
 
         self.response.write(template.render())
 
@@ -45,11 +46,12 @@ class FormHandler(webapp2.RequestHandler):
                 print c.email
                 print temp.email
                 #
-                # self.send_mail(c.get_mail_info(temp))
-                # self.send_mail(temp.get_mail_info(c))
+                self.send_mail(c.get_mail_info(temp))
+                self.send_mail(temp.get_mail_info(c))
 
                 # EmailHandler(c, temp);
                 temp.key.delete()
+
                 self.response.write(env.get_template('results.html').render())
                 return
         c.put()
