@@ -92,6 +92,9 @@ li a:hover {
 
 /*styles container for form*/
 .formSpace {
+   transition: opacity 1s ease-in-out;
+   opacity: 0;
+
     width: 600px;
     display: block;
     margin: auto;
@@ -115,6 +118,9 @@ li a:hover {
 form {
    font-family: 'Dosis', sans-serif;
    font-size: 20px;
+
+   transition: opacity 1s ease-in-out;
+   opacity: 0;
 }
 
 /*styles input font*/
@@ -173,6 +179,9 @@ input {
    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+
+   transition: opacity 1s ease-in-out;
+   opacity: 0;
 }
 
 
