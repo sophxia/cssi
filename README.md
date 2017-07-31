@@ -1,3 +1,4 @@
-My name is Fawziyah Alebiosu and I am a contributor to this project.
+Welcome to SLICE! This project is a product of:
+Fawziyah Alebiosu
 Sophia Xia
 Austin Mejia
